@@ -96,6 +96,7 @@ export class AuthService {
                     userAttributes = Object.assign(userAttributes, authService.signupData.additionalData);
                 }
                 delete userAttributes.email_verified;
+                delete userAttributes.phone_number_verified;
                 cognitoUser.completeNewPasswordChallenge(user.newPassword, userAttributes, this);
             }
         });
